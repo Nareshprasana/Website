@@ -1,0 +1,158 @@
+/* GetStarted Component Styles */
+
+.get-started-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.get-started-card {
+  background-color: #1a1a1a;
+  border-radius: 24px;
+  padding: 48px 40px;
+  max-width: 540px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.growth-icon {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #4fc3ba 0%, #3aa89f 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.get-started-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 20px;
+  line-height: 1.3;
+  letter-spacing: -0.5px;
+}
+
+.get-started-requirement {
+  font-size: 16px;
+  color: #999;
+  margin-bottom: 40px;
+  line-height: 1.5;
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.check-icon {
+  flex-shrink: 0;
+}
+
+.benefit-item span {
+  color: #e6e6e6;
+  font-weight: 400;
+}
+
+.start-button {
+  width: 100%;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 18px 24px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.2s;
+}
+
+.start-button:hover {
+  background-color: #e6e6e6;
+}
+
+/* Responsive Design for GetStarted */
+@media (max-width: 1024px) {
+  .get-started-card {
+    max-width: 100%;
+  }
+
+  .get-started-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .get-started-card {
+    padding: 32px 24px;
+  }
+
+  .growth-icon {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 24px;
+  }
+
+  .growth-icon svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .get-started-title {
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+
+  .get-started-requirement {
+    font-size: 15px;
+    margin-bottom: 32px;
+  }
+
+  .benefits-list {
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+
+  .benefit-item {
+    font-size: 15px;
+  }
+
+  .check-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .start-button {
+    font-size: 15px;
+    padding: 16px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .get-started-title {
+    font-size: 20px;
+  }
+
+  .benefit-item {
+    font-size: 14px;
+  }
+}

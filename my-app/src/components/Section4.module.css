@@ -1,0 +1,286 @@
+/* Section4.module.css - Premium Team Trust Section */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+.section {
+  position: relative;
+  background: #000;
+  color: white;
+  padding: 140px 24px;
+  overflow: hidden;
+}
+
+.bgGlow {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  width: 1000px;
+  height: 1000px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.2) 0%, transparent 70%);
+  transform: translateX(-50%);
+  filter: blur(120px);
+  z-index: 1;
+  pointer-events: none;
+  animation: float 12s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-60px); }
+}
+
+.header {
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto 100px;
+  z-index: 10;
+  position: relative;
+}
+
+.heading {
+  font-size: 4.3rem;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin: 0;
+}
+
+.gradientText {
+  background: linear-gradient(135deg, #60a5fa, #a78bfa, #c084fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 400;
+}
+
+.subheading {
+  font-size: 1.3rem;
+  font-family: 'Manrope', sans-serif;
+  color: #94a3b8;
+  margin-top: 1.5rem;
+  line-height: 1.7;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #111;
+  backdrop-filter: blur(20px);
+  border-radius: 32px;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  border: 1px solid #424242;
+  /* box-shadow: 
+    0 30px 80px rgba(0, 0, 0, 0.7),
+    0 0 100px rgba(139, 92, 246, 0.15); */
+  z-index: 10;
+}
+/* 
+@media (min-width: 1024px) {
+  .card {
+    flex-direction: row;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 3rem 2.5rem;
+  }
+} */
+
+.imageWrapper {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.teamImage {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 24px;
+  object-fit: cover;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+  transition: all 0.8s ease;
+}
+
+.teamImage:hover {
+  transform: scale(1.03);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.9);
+}
+
+.imageGlow {
+  position: absolute;
+  inset: -20%;
+  /* background: radial-gradient(circle at center, rgba(147, 51, 234, 0.3), transparent 70%); */
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+}
+
+.imageWrapper:hover .imageGlow {
+  opacity: 1;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.title {
+  font-size: 2.1rem;
+  font-weight: 500;
+  color: #e0e7ff;
+  line-height: 1.2;
+  margin: 0;
+  text-align: left;
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-top: 1rem;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.statNumber {
+  font-size: 3.0rem;
+  font-weight: 600;
+  /* color: #fbbf24; */
+  background: linear-gradient(135deg, #60a5fa, #a78bfa, #c084fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.unit {
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-left: 0.5rem;
+}
+
+.statLabel {
+  color: #94a3b8;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.statDivider {
+  width: 1px;
+  height: 60px;
+  background: #374151;
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .statDivider {
+    display: block;
+  }
+
+  .title{
+    text-align: center;
+  }
+  .stats {
+    justify-content: center;
+  }
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #374151, transparent);
+  /* margin: 3rem 0; */
+}
+/* ———————————————————————————————
+   SECTION 4 – PREMIUM TEAM TRUST – RESPONSIVE MEDIA QUERIES
+   Mobile + Tablet Only (≤1024px) – No conflicts, no 375px bugs
+   ——————————————————————————————— */
+
+/* Mobile XS – ≤320px (iPhone SE, Galaxy Fold) */
+@media (max-width: 320px) {
+  .section { padding: 90px 14px; }
+  .header { margin-bottom: 70px; }
+  .heading { font-size: 2.6rem; letter-spacing: -1.4px; }
+  .subheading { font-size: 1.15rem; padding: 0 0.5rem; }
+  .card { padding: 2rem; border-radius: 24px; gap: 2rem; }
+  .title { font-size: 1.8rem; text-align: center; }
+  .teamImage { max-width: 100%; border-radius: 10px; }
+  .stats { gap: 1.5rem; justify-content: center; }
+  .statNumber { font-size: 2.6rem; }
+  .unit { font-size: 2rem; }
+  .statLabel { font-size: 1rem; }
+}
+
+/* Mobile S/M – 321px → 375px (iPhone 12/13/14 – 100% safe) */
+@media (min-width: 321px) and (max-width: 375.98px) {
+  .section { padding: 100px 16px; }
+  .header { margin-bottom: 80px; }
+  .heading { font-size: 3rem; letter-spacing: -1.6px; }
+  .subheading { font-size: 1.22rem; }
+  .card { padding: 2.4rem; gap: 2.2rem; }
+  .title { font-size: 1.95rem; }
+  .teamImage { max-width: 460px; border-radius: 10px; }
+  .statNumber { font-size: 3rem; }
+  .unit { font-size: 2.3rem; }
+  .statLabel { font-size: 1.05rem; }
+}
+
+/* Mobile L – 376px → 480px (Pixel 7 Pro, iPhone 14 Pro Max) */
+@media (min-width: 376px) and (max-width: 480px) {
+  .section { padding: 110px 20px; }
+  .header { margin-bottom: 90px; }
+  .heading { font-size: 3.5rem; }
+  .subheading { font-size: 1.28rem; }
+  .card { padding: 2.8rem; gap: 2.4rem; }
+  .title { font-size: 2.05rem; }
+  .teamImage { max-width: 480px; border-radius: 10px; }
+  .statNumber { font-size: 3.4rem; }
+  .unit { font-size: 2.6rem; }
+}
+
+/* Tablet Portrait – 481px → 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+  .section { padding: 130px 24px; }
+  .header { margin-bottom: 100px; }
+  .heading { font-size: 3.9rem; letter-spacing: -2px; }
+  .subheading { font-size: 1.4rem; max-width: 800px; }
+  .card { padding: 3.2rem; gap: 2.8rem; border-radius: 32px; }
+  .title { font-size: 2.2rem; }
+  .teamImage { max-width: 500px; border-radius: 28px; }
+  .stats { gap: 2.5rem; }
+  .statNumber { font-size: 3.8rem; }
+  .unit { font-size: 2.8rem; }
+  .statLabel { font-size: 1.15rem; }
+}
+
+/* Tablet Landscape & Small Laptop – 769px → 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .section { padding: 140px 32px; }
+  .heading { font-size: 4.1rem; }
+  .subheading { font-size: 1.45rem; }
+  .card { 
+    flex-direction: row; 
+    align-items: center; 
+    padding: 3.5rem 3rem; 
+    gap: 3rem;
+  }
+  .title { text-align: left; font-size: 2.3rem; }
+  .stats { justify-content: flex-start; gap: 3rem; }
+  .teamImage { max-width: 520px; }
+  .statNumber { font-size: 4rem; }
+  .unit { font-size: 3rem; }
+}

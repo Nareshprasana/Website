@@ -1,0 +1,190 @@
+/* NameDetails Component Styles */
+
+.name-details-section {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 40px 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  transition: opacity 0.2s;
+}
+
+.back-button:hover {
+  opacity: 0.7;
+}
+
+.step-indicator {
+  font-size: 14px;
+  color: #999;
+}
+
+.help-button {
+  background-color:#ffff;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s;
+}
+
+.help-button:hover {
+  background-color: #EDF2FB;
+  border: rgba(107, 114, 128, 0.7);
+}
+
+.form-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.form-title {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  letter-spacing: -0.5px;
+}
+
+.input-wrapper {
+  margin-bottom: 40px;
+}
+
+.name-input {
+  width: 100%;
+  background-color: #000;
+  border: 2px solid #333;
+  border-radius: 12px;
+  padding: 20px 24px;
+  font-size: 18px;
+  color: #fff;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.name-input::placeholder {
+  color: #666;
+}
+
+.name-input:focus {
+  border-color: #555;
+}
+
+.next-button {
+  width: 100%;
+  background-color: #333;
+  color: #666;
+  border: none;
+  padding: 20px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: not-allowed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s;
+  margin-bottom: auto;
+}
+
+.next-button.active {
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+}
+
+.next-button.active:hover {
+  background-color: #e6e6e6;
+}
+
+.next-button:disabled {
+  cursor: not-allowed;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 40px;
+  color: #999;
+  font-size: 14px;
+}
+
+.footer svg {
+  opacity: 0.7;
+}
+
+.footer-text {
+  opacity: 0.7;
+}
+
+/* Responsive Design for NameDetails Section */
+@media (max-width: 1024px) {
+  .name-details-section {
+    padding: 40px;
+  }
+
+  .form-title {
+    font-size: 32px;
+  }
+
+  .header {
+    margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .name-details-section {
+    padding: 24px;
+  }
+
+  .form-title {
+    font-size: 28px;
+  }
+
+  .header {
+    margin-bottom: 40px;
+  }
+
+  .name-input {
+    font-size: 16px;
+    padding: 16px 20px;
+  }
+
+  .next-button {
+    font-size: 16px;
+    padding: 16px;
+  }
+
+  .help-button {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}

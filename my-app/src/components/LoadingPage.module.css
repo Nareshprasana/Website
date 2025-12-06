@@ -1,0 +1,50 @@
+.loadingWrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center; 
+  align-items: center;   
+  background-color: #08090A;  
+}
+
+.skCubeGrid {
+  width: 130px;
+  height: 130px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.skCube {
+  width: 33%;
+  height: 33%;
+  background-color: #EDF2FB;
+  animation: skCubeGridScaleDelay 1.3s infinite ease-in-out;
+}
+
+.skCube1 { animation-delay: 0.2s; }
+.skCube2 { animation-delay: 0.3s; }
+.skCube3 { animation-delay: 0.4s; }
+.skCube4 { animation-delay: 0.1s; }
+.skCube5 { animation-delay: 0.2s; }
+.skCube6 { animation-delay: 0.3s; }
+.skCube7 { animation-delay: 0s; }
+.skCube8 { animation-delay: 0.1s; }
+.skCube9 { animation-delay: 0.2s; }
+
+@keyframes skCubeGridScaleDelay {
+  0%, 70%, 100% {
+    transform: scale3D(1, 1, 1);
+  }
+  35% {
+    transform: scale3D(0, 0, 1);
+  }
+}
+
+@media (max-width: 426px) {
+  .skCubeGrid {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-wrap: wrap;
+}
+}

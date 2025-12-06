@@ -1,0 +1,596 @@
+/* Import Playfair Display font */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap");
+
+/* Contact Page Wrapper */
+.contact-page-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background: #E7F0FF;
+  color: #000;
+  position: relative;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Styling for Contact Page */
+.contact-page-wrapper .header {
+  background: transparent;
+}
+
+.contact-page-wrapper .header.scrolled {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Text color transitions when scrolled on light background */
+.contact-page-wrapper .header.scrolled .nav-menu li a {
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+.contact-page-wrapper .header.scrolled .nav-menu li a:hover {
+  color: #4a9eff;
+}
+
+.contact-page-wrapper .header.scrolled .nav-button {
+  color: #000;
+  border-color: #000;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.contact-page-wrapper .header.scrolled .nav-button:hover {
+  background: #000;
+  color: white;
+}
+
+.contact-page-wrapper .header.scrolled .resources-button {
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+/* Keep login button consistent - no black to white transformation */
+.contact-page-wrapper .header .login-button {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.3) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+.contact-page-wrapper .header.scrolled .login-button,
+.contact-page-wrapper .header.past-video .login-button {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.3) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+.contact-page-wrapper .header .login-dropdown:hover .login-button {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.4) 100%);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Hero Section - Background Image */
+.contact-hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  padding-top: 80px;
+  z-index: 2;
+  transition: opacity 0.1s ease-out;
+}
+
+.contact-hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent 0%, transparent 40%, #E7F0FF 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.contact-content {
+  text-align: center;
+  max-width: 800px;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-heading {
+  font-family: 'Manrope', sans-serif;
+  font-size: 64px;
+  font-weight: 1000;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+/* Lucide Scroll Arrows */
+.contact-arrow-stack {
+  position: relative;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 90px;
+  perspective: 400px;
+  cursor: pointer;
+  outline: none;
+}
+
+.contact-arrow {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  stroke: #000;
+  stroke-width: 1.5;
+  opacity: 0;
+  transform: translateY(0) scale(0.9);
+  animation: smoothScroll 2.4s cubic-bezier(0.55, 0.1, 0.45, 1) infinite;
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.25));
+  will-change: transform, opacity;
+}
+
+.contact-arrow.ca1 {
+  top: 0;
+  animation-delay: 0s;
+}
+.contact-arrow.ca2 {
+  top: 24px;
+  animation-delay: 0.25s;
+}
+.contact-arrow.ca3 {
+  top: 48px;
+  animation-delay: 0.5s;
+}
+
+@keyframes smoothScroll {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px) scale(0.9) rotateX(15deg);
+  }
+  20% {
+    opacity: 0.8;
+    transform: translateY(0) scale(1) rotateX(8deg);
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(10px) scale(1.05) rotateX(0deg);
+  }
+  60% {
+    opacity: 0.8;
+    transform: translateY(20px) scale(1) rotateX(-5deg);
+  }
+  80% {
+    opacity: 0.3;
+    transform: translateY(30px) scale(0.95) rotateX(-10deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(35px) scale(0.9) rotateX(-12deg);
+  }
+}
+
+.contact-arrow-stack:hover .contact-arrow {
+  animation-duration: 1.6s;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.4));
+}
+
+.contact-arrow-stack:hover {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.25));
+  }
+  50% {
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.4));
+  }
+}
+
+.contact-arrow-stack:focus-visible {
+  outline: 3px solid #000;
+  outline-offset: 4px;
+}
+
+/* Contact Glass Section */
+.contact-glass-section {
+  background: transparent;
+  padding: 80px 5% 100px 5%;
+  position: relative;
+  z-index: 10;
+}
+
+.contact-glass-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* Apple Glass Cards */
+.contact-glass-card {
+  padding: 3rem;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+/* Get in Touch - No box */
+.contact-glass-card:first-child {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  box-shadow: none;
+  padding: 3rem 2rem;
+}
+
+/* Send us a message - Keep glass effect */
+.contact-glass-card:last-child {
+  background: linear-gradient(135deg, 
+    rgba(0, 0, 0, 0.12) 0%, 
+    rgba(0, 0, 0, 0.08) 50%, 
+    rgba(0, 0, 0, 0.06) 100%);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  border-radius: 24px;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.contact-glass-card:last-child::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(0, 0, 0, 0.1) 0%, 
+    transparent 50%, 
+    rgba(0, 0, 0, 0.05) 100%);
+  border-radius: 24px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.contact-glass-card:last-child:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(0, 0, 0, 0.3);
+}
+
+.contact-glass-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+.contact-glass-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #000;
+  text-align: center;
+}
+
+.contact-glass-divider {
+  width: 100%;
+  max-width: 400px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.6) 20%,
+    rgba(0, 0, 0, 0.6) 80%,
+    transparent 100%
+  );
+  margin: 0 auto 2.5rem;
+  border-radius: 1px;
+}
+
+.contact-glass-subtitle {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 2rem;
+}
+
+/* Contact Info List */
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact-info-item {
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+}
+
+.contact-info-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  color: #000;
+}
+
+.contact-info-text {
+  flex: 1;
+}
+
+.contact-info-text p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+/* Contact Form */
+.contact-glass-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.contact-glass-input,
+.contact-glass-textarea {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background: rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  color: #000;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.contact-glass-input:focus,
+.contact-glass-textarea:focus {
+  outline: none;
+  border-color: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+.contact-glass-input::placeholder,
+.contact-glass-textarea::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.contact-glass-input.contact-full-width {
+  grid-column: 1 / -1;
+}
+
+.contact-glass-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-glass-recaptcha {
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem 0;
+}
+
+.contact-glass-button {
+  width: 100%;
+  padding: 1.2rem 2rem;
+  background: linear-gradient(135deg, #d4af37 0%, #f4e5b1 100%);
+  border: none;
+  border-radius: 12px;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.contact-glass-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+}
+
+.contact-glass-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.contact-glass-button:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Map Section */
+.contact-map-section {
+  background: transparent;
+  padding: 100px 5%;
+  position: relative;
+  z-index: 10;
+}
+
+.contact-map-title {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #000;
+}
+
+.contact-map-container {
+  position: relative;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  height: 70vh;
+  min-height: 500px;
+  border-radius: 24px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+}
+
+.contact-map-container:hover {
+  border-color: rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.contact-map-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.contact-map-container:hover .contact-map-image {
+  transform: scale(1.05);
+}
+
+.contact-map-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 3rem;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.contact-map-container:hover .contact-map-overlay {
+  opacity: 1;
+}
+
+.contact-map-link {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #000;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .contact-glass-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-heading {
+    font-size: 48px;
+  }
+
+  .contact-arrow-stack {
+    height: 70px;
+    margin-top: 1.5rem;
+  }
+
+  .contact-arrow {
+    width: 1.5rem;
+    height: 1.5rem;
+    stroke-width: 1.3;
+  }
+
+  .contact-arrow.ca2 {
+    top: 20px;
+  }
+
+  .contact-arrow.ca3 {
+    top: 40px;
+  }
+
+  .contact-glass-section {
+    padding: 60px 5% 80px 5%;
+  }
+
+  .contact-glass-card {
+    padding: 2rem;
+  }
+
+  .contact-glass-title {
+    font-size: 1.6rem;
+  }
+
+  .contact-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-map-title {
+    font-size: 2rem;
+  }
+
+  .contact-map-container {
+    height: 50vh;
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-heading {
+    font-size: 36px;
+  }
+
+  .contact-glass-section {
+    padding: 60px 5%;
+  }
+
+  .contact-glass-card {
+    padding: 1.5rem;
+  }
+
+  .contact-map-container {
+    height: 40vh;
+    min-height: 300px;
+  }
+}

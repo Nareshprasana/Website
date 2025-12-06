@@ -1,0 +1,41 @@
+.layout {
+  display: flex;
+}
+
+.layoutCollapsed {
+  display: flex;
+}
+
+/* RIGHT SIDE MAIN AREA */
+.mainArea {
+  flex: 1;
+  position: relative;
+  padding-top: 60px; /* NAVBAR HEIGHT */
+}
+
+/* SCROLLABLE CONTENT */
+.contentWrapper {
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+  padding: 25px 30px;
+  background: #f5f7fa;
+  transition: padding-left 0.3s ease;
+}
+
+/* SIDEBAR EXPANDED */
+.layout .contentWrapper {
+  padding-left: 260px;
+}
+
+/* SIDEBAR COLLAPSED */
+.layoutCollapsed .contentWrapper {
+  padding-left: 80px;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  .layout .contentWrapper,
+  .layoutCollapsed .contentWrapper {
+    padding-left: 10px !important;
+  }
+}

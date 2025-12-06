@@ -1,0 +1,1266 @@
+@import url('https://fonts.googleapis.com/css2?family=Adamina&family=Playfair+Display:wght@400;600;700&display=swap');
+
+/* Page wrapper */
+.newsletter-detail-page {
+  min-height: 100vh;
+  background: #000;
+}
+
+.newsletter-detail-page .header {
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.nd-wrapper {
+  min-height: 100vh;
+  padding: 120px 100px 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  overflow: visible;
+}
+
+/* Main frame - fixed size with transform scaling */
+.nd-frame {
+  background: #e6e6e6;
+  position: relative;
+  width: 490px;
+  height: 700px;
+  box-shadow: -4px 0 0 #000, 4px 0 0 #000;
+  transform-origin: top center;
+  transform: scale(2.2);
+  max-width: none;
+  margin-bottom: calc(700px * 2.2 - 700px);
+}
+
+@media (min-width: 1600px) {
+  .nd-frame {
+    transform: scale(2.6);
+    margin-bottom: calc(700px * 2.6 - 700px);
+  }
+}
+
+@media (min-width: 1900px) {
+  .nd-frame {
+    transform: scale(3);
+    margin-bottom: calc(700px * 3 - 700px);
+  }
+}
+
+/* Top horizontal line at 81px */
+.nd-line-top {
+  position: absolute;
+  height: 1px;
+  left: 50%;
+  top: 81px;
+  transform: translateX(-50%);
+  width: 457.008px;
+  background: #000;
+  overflow: hidden;
+}
+
+.nd-line-top img {
+  display: block;
+  width: 100%;
+  height: 1px;
+  object-fit: fill;
+}
+
+/* Small decorative line at 194px */
+.nd-line-small {
+  position: absolute;
+  height: 1px;
+  left: calc(16.67% + 4.17px);
+  top: 194px;
+  transform: translateX(-50%);
+  width: 140px;
+  background: #000;
+  overflow: hidden;
+}
+
+.nd-line-small img {
+  display: block;
+  width: 100%;
+  height: 1px;
+  object-fit: fill;
+}
+
+/* Newsletter title */
+.nd-title {
+  position: absolute;
+  font-family: 'Adamina', serif;
+  line-height: normal;
+  left: 50%;
+  transform: translateX(-50%);
+  font-style: normal;
+  font-size: 30px;
+  color: #000;
+  top: 32px;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Left vertical line */
+.nd-vline-left {
+  position: absolute;
+  width: 1px;
+  height: 65px;
+  left: calc(16.67% + 15.17px);
+  top: 15px;
+  background: #000;
+  overflow: hidden;
+}
+
+.nd-vline-left img {
+  width: 1px;
+  height: 65px;
+  display: block;
+  object-fit: fill;
+}
+
+/* Right vertical line */
+.nd-vline-right {
+  position: absolute;
+  width: 1px;
+  height: 65px;
+  left: calc(83.33% - 13.17px);
+  top: 15px;
+  background: #000;
+  overflow: hidden;
+}
+
+.nd-vline-right img {
+  width: 1px;
+  height: 65px;
+  display: block;
+  object-fit: fill;
+}
+
+/* Date */
+.nd-date {
+  position: absolute;
+  font-family: sans-serif;
+  line-height: normal;
+  right: 10px;
+  font-style: normal;
+  font-size: 10px;
+  color: #000;
+  top: 38px;
+  width: 77px;
+  white-space: pre-wrap;
+  margin: 0;
+  text-align: left;
+}
+
+/* Edition */
+.nd-edition {
+  position: absolute;
+  font-family: sans-serif;
+  line-height: normal;
+  left: 27px;
+  font-style: normal;
+  font-size: 10px;
+  color: #000;
+  top: 51px;
+  margin: 0;
+  text-align: left;
+}
+
+/* Page number */
+.nd-page {
+  position: absolute;
+  font-family: sans-serif;
+  line-height: normal;
+  right: 17px;
+  font-style: normal;
+  font-size: 8px;
+  color: #000;
+  top: 677px;
+  margin: 0;
+  text-align: left;
+}
+
+/* Bottom horizontal line at 672px */
+.nd-line-bottom {
+  position: absolute;
+  height: 1px;
+  left: 50%;
+  top: 672px;
+  transform: translateX(-50%);
+  width: 457.008px;
+  background: #000;
+  overflow: hidden;
+}
+
+.nd-line-bottom img {
+  display: block;
+  width: 100%;
+  height: 1px;
+  object-fit: fill;
+}
+
+/* Headline */
+.nd-headline {
+  position: absolute;
+  font-family: sans-serif;
+  font-weight: bold;
+  line-height: 24px;
+  left: 19px;
+  font-style: normal;
+  font-size: 16px;
+  color: #000;
+  top: 93px;
+  width: 137px;
+  white-space: pre-wrap;
+  margin: 0;
+  text-align: left;
+}
+
+/* Bar chart container */
+.nd-chart {
+  position: absolute;
+  height: 150px;
+  left: 17px;
+  overflow: hidden;
+  top: 438px;
+  width: 220px;
+}
+
+.nd-chart-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+/* Chart caption */
+.nd-chart-caption {
+  position: absolute;
+  font-family: sans-serif;
+  font-weight: bold;
+  line-height: 14px;
+  left: 36px;
+  font-style: normal;
+  font-size: 6px;
+  color: #000;
+  top: 427px;
+  margin: 0;
+  text-align: left;
+}
+
+/* Main image */
+.nd-image {
+  position: absolute;
+  height: 198px;
+  left: 176px;
+  top: 99px;
+  width: 298px;
+  overflow: hidden;
+}
+
+.nd-image img {
+  position: absolute;
+  inset: 0;
+  max-width: none;
+  object-fit: cover;
+  object-position: 50% 50%;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+}
+
+/* Blue highlight box */
+.nd-highlight-box {
+  position: absolute;
+  background: #1b45a5;
+  height: 42px;
+  left: 17px;
+  overflow: hidden;
+  top: 616px;
+  width: 218px;
+}
+
+.nd-highlight-box p {
+  font-family: sans-serif;
+  font-weight: bold;
+  line-height: 16px;
+  position: absolute;
+  left: 7px;
+  font-style: normal;
+  font-size: 9px;
+  color: #fff;
+  top: 5px;
+  width: 211px;
+  white-space: pre-wrap;
+  margin: 0;
+  text-align: left;
+}
+
+/* First paragraph with drop cap */
+.nd-text-1 {
+  position: absolute;
+  font-family: sans-serif;
+  line-height: 16px;
+  left: 17px;
+  font-style: normal;
+  font-size: 9px;
+  color: #000;
+  top: 204px;
+  width: 138px;
+  margin: 0;
+  text-align: left;
+}
+
+.nd-dropcap {
+  font-family: 'Playfair Display', serif;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 1;
+  float: left;
+  margin-right: 3px;
+  margin-top: -2px;
+}
+
+.nd-text-content {
+  font-size: 9px;
+  display: inline;
+}
+
+/* Second paragraph */
+.nd-text-2 {
+  position: absolute;
+  font-family: sans-serif;
+  line-height: 16px;
+  left: 17px;
+  font-style: normal;
+  font-size: 9px;
+  color: #000;
+  top: 307px;
+  width: 217px;
+  white-space: pre-wrap;
+  text-align: left;
+}
+
+.nd-text-2 p {
+  margin: 0;
+  text-align: left;
+}
+
+/* Third paragraph */
+.nd-text-3 {
+  position: absolute;
+  font-family: sans-serif;
+  line-height: 16px;
+  left: 254px;
+  font-style: normal;
+  font-size: 9px;
+  color: #000;
+  top: 306px;
+  width: 221px;
+  white-space: pre-wrap;
+  margin: 0;
+  text-align: left;
+}
+
+/* Fourth paragraph */
+.nd-text-4 {
+  position: absolute;
+  font-family: sans-serif;
+  line-height: 16px;
+  left: 254px;
+  font-style: normal;
+  font-size: 9px;
+  color: #000;
+  top: 484px;
+  width: 221px;
+  white-space: pre-wrap;
+  margin: 0;
+  text-align: left;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1599px) {
+  .nd-frame {
+    transform: scale(2);
+    margin-bottom: calc(700px * 2 - 700px);
+  }
+}
+
+@media (max-width: 1200px) {
+  .nd-wrapper {
+    padding: 120px 80px 100px;
+  }
+  
+  .nd-frame {
+    transform: scale(1.8);
+    margin-bottom: calc(700px * 1.8 - 700px);
+  }
+}
+
+@media (max-width: 1024px) {
+  .nd-wrapper {
+    padding: 120px 70px 100px;
+  }
+  
+  .nd-frame {
+    transform: scale(1.5);
+    margin-bottom: calc(700px * 1.5 - 700px);
+  }
+}
+
+@media (max-width: 768px) {
+  .nd-wrapper {
+    padding: 120px 60px 100px;
+  }
+  
+  .nd-frame {
+    transform: scale(1.2);
+    margin-bottom: calc(700px * 1.2 - 700px);
+  }
+}
+
+@media (max-width: 520px) {
+  .nd-wrapper {
+    padding: 100px 30px 80px;
+  }
+  
+  .nd-frame {
+    transform: scale(0.9);
+    margin-bottom: calc(700px * 0.9 - 700px);
+  }
+}
+
+/* ========== PAGE 2 STYLES ========== */
+
+.nd-frame-2 {
+  margin-top: 40px;
+}
+
+/* Top horizontal line at 38px */
+.nd2-line-top {
+  position: absolute;
+  height: 1px;
+  left: 50%;
+  top: 38px;
+  transform: translateX(-50%);
+  width: 457.008px;
+  background: #000;
+  overflow: hidden;
+}
+
+.nd2-line-top img {
+  display: block;
+  width: 100%;
+  height: 1px;
+  object-fit: fill;
+}
+
+/* Date */
+.nd2-date {
+  position: absolute;
+  font-family: sans-serif;
+  line-height: normal;
+  left: calc(33.33% - 65.67px);
+  font-style: normal;
+  font-size: 10px;
+  color: #000;
+  top: 12px;
+  width: 140px;
+  white-space: pre-wrap;
+  margin: 0;
+  text-align: left;
+}
+
+/* Edition */
+.nd2-edition {
+  position: absolute;
+  font-family: sans-serif;
+  line-height: normal;
+  left: calc(8.33% - 13.92px);
+  font-style: normal;
+  font-size: 10px;
+  color: #000;
+  top: 12px;
+  margin: 0;
+  text-align: left;
+}
+
+/* Page number */
+.nd2-page {
+  position: absolute;
+  font-family: sans-serif;
+  line-height: normal;
+  left: calc(91.67% + 18.92px);
+  font-style: normal;
+  font-size: 8px;
+  color: #000;
+  top: 677px;
+  margin: 0;
+  text-align: left;
+}
+
+/* Bottom horizontal line at 672px */
+.nd2-line-bottom {
+  position: absolute;
+  height: 1px;
+  left: 50%;
+  top: 672px;
+  transform: translateX(-50%);
+  width: 457.008px;
+  background: #000;
+  overflow: hidden;
+}
+
+.nd2-line-bottom img {
+  display: block;
+  width: 100%;
+  height: 1px;
+  object-fit: fill;
+}
+
+/* Small decorative line */
+.nd2-line-small {
+  position: absolute;
+  width: 1px;
+  height: 32px;
+  left: calc(16.67% + 4.17px);
+  top: 6px;
+  background: #000;
+  overflow: hidden;
+}
+
+.nd2-line-small img {
+  width: 1px;
+  height: 32px;
+  display: block;
+  object-fit: fill;
+  transform: rotate(270deg);
+}
+
+/* Text paragraph 1 - top left */
+.nd2-text-1 {
+  position: absolute;
+  font-family: sans-serif;
+  line-height: 16px;
+  left: 17px;
+  font-style: normal;
+  font-size: 9px;
+  color: #000;
+  top: 49px;
+  width: 218px;
+  white-space: pre-wrap;
+  margin: 0;
+  text-align: left;
+}
+
+/* Text paragraph 2 - left middle */
+.nd2-text-2 {
+  position: absolute;
+  font-family: sans-serif;
+  line-height: 16px;
+  left: 16px;
+  font-style: normal;
+  font-size: 9px;
+  color: #000;
+  top: 96px;
+  width: 219px;
+  white-space: pre-wrap;
+  margin: 0;
+  text-align: left;
+}
+
+/* Text paragraph 3 - left lower */
+.nd2-text-3 {
+  position: absolute;
+  font-family: sans-serif;
+  line-height: 16px;
+  left: 16px;
+  font-style: normal;
+  font-size: 9px;
+  color: #000;
+  top: 194px;
+  width: 219px;
+  white-space: pre-wrap;
+  margin: 0;
+  text-align: left;
+}
+
+/* Text paragraph 4 - bottom left */
+.nd2-text-4 {
+  position: absolute;
+  font-family: sans-serif;
+  line-height: 16px;
+  left: 17px;
+  font-style: normal;
+  font-size: 9px;
+  color: #000;
+  top: 553px;
+  width: 218px;
+  white-space: pre-wrap;
+  margin: 0;
+  text-align: left;
+}
+
+/* Text paragraph 5 - top right */
+.nd2-text-5 {
+  position: absolute;
+  font-family: sans-serif;
+  line-height: 16px;
+  left: calc(50% + 10.5px);
+  font-style: normal;
+  font-size: 9px;
+  color: #000;
+  top: 52px;
+  width: 219px;
+  white-space: pre-wrap;
+  margin: 0;
+  text-align: left;
+}
+
+/* Blue header bar for table */
+.nd2-table-header {
+  position: absolute;
+  background: #1b45a5;
+  height: 12px;
+  left: calc(50% + 10.5px);
+  top: 110px;
+  width: 219px;
+  display: flex;
+  align-items: center;
+  padding: 0 3px;
+}
+
+.nd2-th-index {
+  font-family: sans-serif;
+  font-weight: bold;
+  line-height: 12px;
+  font-style: normal;
+  font-size: 6px;
+  color: #fff;
+  margin: 0;
+  text-align: left;
+  position: absolute;
+  left: 25px;
+}
+
+.nd2-th-date1 {
+  font-family: sans-serif;
+  font-weight: bold;
+  line-height: 12px;
+  font-style: normal;
+  font-size: 6px;
+  color: #fff;
+  margin: 0;
+  text-align: left;
+  position: absolute;
+  left: 85px;
+}
+
+.nd2-th-date2 {
+  font-family: sans-serif;
+  font-weight: bold;
+  line-height: 12px;
+  font-style: normal;
+  font-size: 6px;
+  color: #fff;
+  margin: 0;
+  text-align: left;
+  position: absolute;
+  left: 132px;
+}
+
+.nd2-th-return {
+  font-family: sans-serif;
+  font-weight: bold;
+  line-height: 12px;
+  font-style: normal;
+  font-size: 6px;
+  color: #fff;
+  margin: 0;
+  text-align: left;
+  position: absolute;
+  left: 180px;
+}
+
+/* Table vertical lines */
+.nd2-table-vline {
+  position: absolute;
+  width: 1px;
+  height: 236px;
+  top: 111px;
+  background: #000;
+  overflow: hidden;
+}
+
+.nd2-table-vline img {
+  width: 1px;
+  height: 236px;
+  display: block;
+  object-fit: fill;
+}
+
+.nd2-table-vline-1 {
+  left: calc(66.67% + 10.17px);
+}
+
+.nd2-table-vline-2 {
+  left: calc(66.67% + 57.17px);
+}
+
+.nd2-table-vline-3 {
+  left: calc(83.33% + 23.33px);
+}
+
+/* Image 12 - market chart */
+.nd2-image-12 {
+  position: absolute;
+  height: 226px;
+  left: calc(50% + 10.5px);
+  top: 121px;
+  width: 219px;
+  overflow: hidden;
+}
+
+.nd2-image-12 img {
+  position: absolute;
+  height: 111.42%;
+  left: -1.34%;
+  max-width: none;
+  top: -9.88%;
+  width: 102.68%;
+}
+
+/* Image 15 - agriculture photo */
+.nd2-image-15 {
+  position: absolute;
+  height: 143px;
+  left: 17px;
+  top: 406px;
+  width: 216px;
+  overflow: hidden;
+}
+
+.nd2-image-15 img {
+  position: absolute;
+  inset: 0;
+  max-width: none;
+  object-fit: cover;
+  object-position: 50% 50%;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+}
+
+/* Text paragraph 6 - right middle */
+.nd2-text-6 {
+  position: absolute;
+  font-family: sans-serif;
+  line-height: 16px;
+  left: calc(50% + 9.5px);
+  font-style: normal;
+  font-size: 9px;
+  color: #000;
+  top: 357px;
+  width: 220px;
+  white-space: pre-wrap;
+  margin: 0;
+  text-align: left;
+}
+
+/* Text paragraph 7 - right bottom */
+.nd2-text-7 {
+  position: absolute;
+  font-family: sans-serif;
+  line-height: 16px;
+  left: calc(50% + 10.5px);
+  font-style: normal;
+  font-size: 9px;
+  color: #000;
+  top: 474px;
+  width: 219px;
+  white-space: pre-wrap;
+  margin: 0;
+  text-align: left;
+}
+
+/* ========== PAGE 3 STYLES ========== */
+
+.nd-frame-3 {
+  margin-top: 40px;
+}
+
+/* Top horizontal line at 38px */
+.nd3-line-top {
+  position: absolute;
+  height: 1px;
+  left: 50%;
+  top: 38px;
+  transform: translateX(-50%);
+  width: 457.008px;
+  background: #000;
+  overflow: hidden;
+}
+
+.nd3-line-top img {
+  display: block;
+  width: 100%;
+  height: 1px;
+  object-fit: fill;
+}
+
+/* Date */
+.nd3-date {
+  position: absolute;
+  font-family: sans-serif;
+  line-height: normal;
+  left: calc(33.33% - 65.67px);
+  font-style: normal;
+  font-size: 10px;
+  color: #000;
+  top: 12px;
+  width: 140px;
+  white-space: pre-wrap;
+  margin: 0;
+  text-align: left;
+}
+
+/* Edition */
+.nd3-edition {
+  position: absolute;
+  font-family: sans-serif;
+  line-height: normal;
+  left: calc(8.33% - 13.92px);
+  font-style: normal;
+  font-size: 10px;
+  color: #000;
+  top: 12px;
+  margin: 0;
+  text-align: left;
+}
+
+/* Page number */
+.nd3-page {
+  position: absolute;
+  font-family: sans-serif;
+  line-height: normal;
+  left: calc(91.67% + 18.92px);
+  font-style: normal;
+  font-size: 8px;
+  color: #000;
+  top: 677px;
+  margin: 0;
+  text-align: left;
+}
+
+/* Bottom horizontal line at 672px */
+.nd3-line-bottom {
+  position: absolute;
+  height: 1px;
+  left: 50%;
+  top: 672px;
+  transform: translateX(-50%);
+  width: 457.008px;
+  background: #000;
+  overflow: hidden;
+}
+
+.nd3-line-bottom img {
+  display: block;
+  width: 100%;
+  height: 1px;
+  object-fit: fill;
+}
+
+/* Small decorative line */
+.nd3-line-small {
+  position: absolute;
+  width: 1px;
+  height: 32px;
+  left: calc(16.67% + 4.17px);
+  top: 6px;
+  background: #000;
+  overflow: hidden;
+}
+
+.nd3-line-small img {
+  width: 1px;
+  height: 32px;
+  display: block;
+  object-fit: fill;
+}
+
+/* Text paragraph 1 - top left */
+.nd3-text-1 {
+  position: absolute;
+  font-family: sans-serif;
+  line-height: 16px;
+  left: 17px;
+  font-style: normal;
+  font-size: 9px;
+  color: #000;
+  top: 49px;
+  width: 219px;
+  white-space: pre-wrap;
+  margin: 0;
+  text-align: left;
+}
+
+/* Text paragraph 2 - left middle */
+.nd3-text-2 {
+  position: absolute;
+  font-family: sans-serif;
+  line-height: 16px;
+  left: 17px;
+  font-style: normal;
+  font-size: 9px;
+  color: #000;
+  top: 84px;
+  width: 219px;
+  white-space: pre-wrap;
+  margin: 0;
+  text-align: left;
+}
+
+/* Large blue box */
+.nd3-blue-box {
+  position: absolute;
+  background: #1b45a5;
+  height: 619px;
+  left: calc(50% + 10.5px);
+  overflow: hidden;
+  top: 44px;
+  width: 220px;
+}
+
+/* Headline inside blue box */
+.nd3-blue-headline {
+  position: absolute;
+  font-family: sans-serif;
+  font-weight: bold;
+  line-height: 24px;
+  left: 7px;
+  font-style: normal;
+  font-size: 18px;
+  color: #fff;
+  top: 9px;
+  width: 206px;
+  white-space: pre-wrap;
+  margin: 0;
+  text-align: left;
+}
+
+/* Trump image */
+.nd3-trump-image {
+  position: absolute;
+  height: 123px;
+  left: 0;
+  top: 100px;
+  width: 220px;
+  overflow: hidden;
+}
+
+.nd3-trump-image img {
+  position: absolute;
+  inset: 0;
+  max-width: none;
+  object-fit: cover;
+  object-position: 50% 50%;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+}
+
+/* Text inside blue box - paragraph 1 */
+.nd3-blue-text-1 {
+  position: absolute;
+  font-family: sans-serif;
+  line-height: 16px;
+  left: 4px;
+  font-style: normal;
+  font-size: 9px;
+  color: #fff;
+  top: 245px;
+  width: 212px;
+  white-space: pre-wrap;
+  margin: 0;
+  text-align: left;
+}
+
+/* Text inside blue box - paragraph 2 */
+.nd3-blue-text-2 {
+  position: absolute;
+  font-family: sans-serif;
+  line-height: 16px;
+  left: 2px;
+  font-style: normal;
+  font-size: 9px;
+  color: #fff;
+  top: 341px;
+  width: 216px;
+  white-space: pre-wrap;
+  margin: 0;
+  text-align: left;
+}
+
+/* Quote container */
+.nd3-quote-container {
+  position: absolute;
+  left: 10px;
+  top: 480px;
+  width: 200px;
+  min-height: 90px;
+}
+
+/* Opening quote mark */
+.nd3-quote-mark-open {
+  position: absolute;
+  font-family: Georgia, serif;
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 30px;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  left: -5px;
+  top: -8px;
+  text-shadow: 1px 1px 0 #fff;
+}
+
+/* Quote text */
+.nd3-quote {
+  font-family: sans-serif;
+  line-height: 16px;
+  font-style: normal;
+  font-size: 9px;
+  color: #fff;
+  white-space: pre-wrap;
+  margin: 0;
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-top: 6px;
+  text-align: left;
+}
+
+/* Closing quote mark */
+.nd3-quote-mark-close {
+  position: absolute;
+  font-family: Georgia, serif;
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 30px;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  right: 15px;
+  bottom: -18px;
+  text-shadow: 1px 1px 0 #fff;
+}
+
+/* Quote attribution */
+.nd3-quote-author {
+  position: absolute;
+  font-family: sans-serif;
+  line-height: 17px;
+  right: 15px;
+  font-style: normal;
+  font-size: 11px;
+  color: #fff;
+  top: 595px;
+  margin: 0;
+  text-align: right;
+}
+
+/* Section title */
+.nd3-section-title {
+  position: absolute;
+  font-family: sans-serif;
+  font-weight: bold;
+  line-height: 16px;
+  left: 31px;
+  font-style: normal;
+  font-size: 9px;
+  color: #000;
+  top: 238px;
+  margin: 0;
+  text-align: left;
+}
+
+/* TOP GAINERS label */
+.nd3-gainers-label {
+  position: absolute;
+  font-family: sans-serif;
+  font-weight: bold;
+  line-height: 16px;
+  left: 33px;
+  font-style: normal;
+  font-size: 9px;
+  color: #000;
+  top: 261px;
+  margin: 0;
+  text-align: left;
+}
+
+/* TOP LOSERS label */
+.nd3-losers-label {
+  position: absolute;
+  font-family: sans-serif;
+  font-weight: bold;
+  line-height: 16px;
+  left: 148px;
+  font-style: normal;
+  font-size: 9px;
+  color: #000;
+  top: 261px;
+  margin: 0;
+  text-align: left;
+}
+
+/* Gainer items */
+.nd3-gainer-item {
+  position: absolute;
+  left: 19px;
+  display: flex;
+  gap: 0;
+}
+
+.nd3-gainer-name-box {
+  background: #80b269;
+  height: 17px;
+  width: 50px;
+  border-radius: 4px 0 0 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  font-size: 7px;
+  line-height: 16px;
+  color: #fff;
+  font-weight: 400;
+}
+
+.nd3-gainer-name-box.nd3-small-text {
+  font-size: 6px;
+  line-height: 7px;
+  padding: 1px;
+  text-align: center;
+}
+
+.nd3-gainer-percent-box {
+  background: #fdfefd;
+  height: 17px;
+  width: 40px;
+  border-radius: 0 4px 4px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 5px;
+  line-height: 16px;
+  color: #000;
+}
+
+/* Loser items */
+.nd3-loser-item {
+  position: absolute;
+  left: 130px;
+  display: flex;
+  gap: 0;
+}
+
+.nd3-loser-name-box {
+  background: #bb6562;
+  height: 17px;
+  width: 50px;
+  border-radius: 4px 0 0 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  font-size: 7px;
+  line-height: 16px;
+  color: #fff;
+  font-weight: 400;
+}
+
+.nd3-loser-percent-box {
+  background: #fdfefd;
+  height: 17px;
+  width: 40px;
+  border-radius: 0 4px 4px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 5px;
+  line-height: 16px;
+  color: #000;
+}
+
+/* Commodities Table */
+.nd3-table {
+  position: absolute;
+  left: 21px;
+  top: 407px;
+  width: 206px;
+  height: 109px;
+  border: 0.5px solid #000;
+  display: flex;
+  flex-direction: column;
+}
+
+.nd3-table-row {
+  display: flex;
+  flex: 1;
+  border-bottom: 0.5px solid #000;
+}
+
+.nd3-table-row:last-child {
+  border-bottom: none;
+}
+
+.nd3-table-header {
+  height: 21px;
+  flex: 0 0 21px;
+}
+
+.nd3-table-cell {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  font-size: 9px;
+  line-height: 16px;
+  color: #000;
+  border-right: 0.5px solid #000;
+  padding: 2px;
+  text-align: center;
+}
+
+.nd3-table-cell:last-child {
+  border-right: none;
+}
+
+.nd3-table-cell.nd3-green {
+  font-weight: bold;
+  color: #80b269;
+}
+
+.nd3-table-cell.nd3-red {
+  font-weight: bold;
+  color: #bb6562;
+}

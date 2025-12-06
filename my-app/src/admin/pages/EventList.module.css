@@ -1,0 +1,148 @@
+.container {
+  padding: 20px;
+  min-height: 100vh;
+  background: #f3f4f6;
+  transition: padding-left 0.3s ease;
+}
+
+.heading {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* WHEN SIDEBAR COLLAPSES */
+.layoutCollapsed .container {
+  padding-left: 80px !important;
+}
+
+/* TOP BAR */
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* SEARCH */
+.searchInput {
+  padding: 12px 16px;
+  width: 260px;
+  border-radius: 10px;
+  border: 2px solid #d1d9e6;
+  background: white;
+  font-size: 16px;
+}
+
+/* FILTER */
+.filterSelect {
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 2px solid #d1d9e6;
+  background: white;
+  font-size: 16px;
+  min-width: 180px;
+}
+
+/* GRID */
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* CARD */
+.card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 18px rgba(0,0,0,0.15);
+}
+
+/* IMAGE */
+.cardImage {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+/* BODY */
+.cardBody {
+  padding: 15px 18px;
+}
+
+.cardTitle {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.cardDate {
+  font-size: 14px;
+  font-weight: 600;
+  color: #3498db;
+  margin-bottom: 10px;
+}
+
+.cardDescription {
+  font-size: 14px;
+  color: #6c757d;
+  height: 40px;
+  overflow: hidden;
+}
+
+/* ACTION BUTTONS */
+.cardActions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.editBtn,
+.deleteBtn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.editBtn {
+  background: #3498db;
+  color: white;
+}
+
+.deleteBtn {
+  background: #ff4d4d;
+  color: white;
+}
+
+/* EMPTY STATE */
+.emptyMessage {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 40px;
+  color: #777;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 15px !important;
+    padding-right: 15px;
+  }
+
+  .searchInput, .filterSelect {
+    width: 100%;
+  }
+}

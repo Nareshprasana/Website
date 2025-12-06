@@ -1,0 +1,275 @@
+.newsletter-estate-page {
+  min-height: 100vh;
+  background: #E6E6E6;
+  color: #000;
+}
+
+/* Force black header background for this page */
+.newsletter-estate-page .header {
+  background: #000 !important;
+}
+
+.newsletter-estate-page .header.scrolled {
+  background: #000 !important;
+}
+
+.newsletter-estate-page .header.past-video {
+  background: #000 !important;
+}
+
+.estate-content {
+  padding: 120px 0 80px;
+  background: #E6E6E6;
+}
+
+.estate-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.estate-spacer {
+  height: 40px;
+}
+
+.estate-main-title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 40px;
+  color: #000;
+  text-align: left;
+}
+
+.estate-intro {
+  margin-bottom: 40px;
+}
+
+.estate-intro p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: left;
+}
+
+.estate-key-facts {
+  margin-bottom: 40px;
+  padding: 30px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.estate-key-facts p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: left;
+}
+
+.estate-image-section {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.estate-main-image {
+  max-width: 300px;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.estate-section-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 60px 0 30px;
+  color: #000;
+  text-align: left;
+}
+
+.estate-subsection-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 40px 0 20px;
+  color: #04d9ff;
+  text-align: left;
+}
+
+.estate-content p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: left;
+}
+
+.estate-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 30px 0;
+}
+
+.estate-list li {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 16px;
+  padding-left: 30px;
+  position: relative;
+  color: #333;
+  text-align: left;
+}
+
+.estate-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #04d9ff;
+  font-weight: bold;
+}
+
+.estate-statistics {
+  background: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  margin: 40px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #04d9ff;
+}
+
+.estate-stats-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 20px 0;
+}
+
+.estate-stats-list li {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 12px;
+  padding-left: 30px;
+  position: relative;
+  color: #333;
+  text-align: left;
+  font-weight: 600;
+}
+
+.estate-stats-list li::before {
+  content: '📊';
+  position: absolute;
+  left: 0;
+  font-size: 20px;
+}
+
+.estate-charts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin: 60px 0;
+}
+
+.estate-chart {
+  text-align: center;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.estate-chart img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.estate-chart-caption {
+  font-size: 14px;
+  color: #666;
+  font-style: italic;
+  text-align: center;
+  margin: 0;
+}
+
+.estate-video {
+  margin: 40px 0;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.estate-video iframe {
+  border-radius: 8px;
+}
+
+.estate-content a {
+  color: #04d9ff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.estate-content a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .estate-container {
+    padding: 0 30px;
+  }
+
+  .estate-main-title {
+    font-size: 36px;
+  }
+
+  .estate-charts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .estate-content {
+    padding: 100px 0 60px;
+  }
+
+  .estate-container {
+    padding: 0 20px;
+  }
+
+  .estate-main-title {
+    font-size: 28px;
+  }
+
+  .estate-section-title {
+    font-size: 28px;
+  }
+
+  .estate-subsection-title {
+    font-size: 22px;
+  }
+
+  .estate-content p,
+  .estate-list li {
+    font-size: 16px;
+  }
+
+  .estate-charts {
+    grid-template-columns: 1fr;
+  }
+
+  .estate-key-facts,
+  .estate-statistics {
+    padding: 20px;
+  }
+
+  .estate-video {
+    padding: 15px;
+  }
+
+  .estate-video iframe {
+    height: 250px;
+  }
+}

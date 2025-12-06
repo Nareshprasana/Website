@@ -1,0 +1,280 @@
+/* EmailComponent.css */
+
+.email-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #111111 0%, #000000 100%);
+  border-radius: 1.5rem;
+  color: white;
+  max-width: 600px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Header Styles */
+.email-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  position: relative;
+}
+
+.back-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.back-btn:hover {
+  color: #9ca3af;
+}
+
+.email-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.3;
+  flex: 1;
+  margin: 0;
+  padding-right: 4rem;
+}
+
+/* .help-btn {
+  right: 0;
+  top: 0;
+  background-color:#EDF2FB;
+  color: #000;
+  border-radius: 24px;
+  border: none;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+} */
+
+.help-btn {
+   background-color:#ffffff;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s;
+}
+
+.help-btn:hover {
+  background-color: #EDF2FB;
+  border: rgba(107, 114, 128, 0.7);
+}
+
+
+/* Form Styles */
+.email-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* Email Inputs Row */
+.email-inputs-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Input Styles */
+.form-input,
+.form-textarea {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid rgba(107, 114, 128, 0.3);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  /* font-family: inherit; */
+  color-scheme: dark;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: rgba(156, 163, 175, 0.6);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(107, 114, 128, 0.6);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+/* Fix for autofill white background in dark theme */
+.form-input:-webkit-autofill,
+.form-input:-webkit-autofill:hover,
+.form-input:-webkit-autofill:focus,
+.form-input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.05) inset !important;
+  -webkit-text-fill-color: white !important;
+  border: 1.5px solid rgba(107, 114, 128, 0.3) !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.form-textarea:-webkit-autofill,
+.form-textarea:-webkit-autofill:hover,
+.form-textarea:-webkit-autofill:focus,
+.form-textarea:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.05) inset !important;
+  -webkit-text-fill-color: white !important;
+  border: 1.5px solid rgba(107, 114, 128, 0.3) !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* For Firefox and other browsers */
+.form-input:-internal-autofill-selected,
+.form-textarea:-internal-autofill-selected {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  background-image: none !important;
+  color: white !important;
+}
+
+/* Submit Button - Base Styles */
+.submit-btn {
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Inactive State - Gray/Disabled */
+.submit-btn.inactive {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1.5px solid rgba(107, 114, 128, 0.3);
+  color: rgba(156, 163, 175, 0.6);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.submit-btn.inactive .arrow {
+  opacity: 0.5;
+}
+
+/* Active State - White Background */
+.submit-btn.active {
+  background: #ffffff;
+  border: 1.5px solid #ffffff;
+  color: #000000;
+  cursor: pointer;
+  opacity: 1;
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.2);
+}
+
+.submit-btn.active:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+}
+
+.submit-btn.active:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
+}
+
+.arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  font-size: 1.2rem;
+}
+
+.submit-btn.active:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* Disabled attribute styling */
+.submit-btn:disabled {
+  cursor: not-allowed;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .email-container {
+    padding: 1.5rem;
+    gap: 1.5rem;
+    max-width: 100%;
+  }
+
+  .email-title {
+    font-size: 1.25rem;
+    padding-right: 0;
+  }
+
+  .email-inputs-row {
+    grid-template-columns: 1fr;
+  }
+
+  .help-btn {
+    position: static;
+    margin-top: 0.5rem;
+  }
+
+  .submit-btn {
+    padding: 0.875rem 1.25rem;
+    font-size: 0.9375rem;
+  }
+}
+
+/* Animation for button state change */
+@keyframes buttonActivate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.submit-btn.active {
+  animation: buttonActivate 0.3s ease-out;
+}

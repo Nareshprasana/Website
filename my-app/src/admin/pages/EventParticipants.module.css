@@ -1,0 +1,96 @@
+.pageContainer {
+  padding: 20px;
+}
+
+.controlsRow {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #e6e9ef;
+  background: #fff;
+}
+
+.input {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #e6e9ef;
+  flex: 1;
+}
+
+.exportBtn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: linear-gradient(90deg,#3498db,#2b82c8);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.mainTable {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.mainTable th {
+  background: #0f1724;
+  color: white;
+  padding: 12px;
+  text-align: left;
+}
+
+.mainTable td {
+  padding: 12px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.noData {
+  padding: 18px;
+  text-align: center;
+  color: #6b7280;
+}
+
+.deleteBtn {
+  background: linear-gradient(90deg,#ff6b6b,#e74c3c);
+  color: #fff;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.pagination {
+  margin-top: 16px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+.prevBtn,.nextBtn {
+  padding: 8px 12px;
+  background: #111;
+  color: #fff;
+  border-radius: 8px;
+  border: none;
+}
+
+.pageNumbers { display:flex; gap:8px; }
+.pageBtn { padding: 6px 10px; border-radius:6px; border:1px solid #e6e9ef; background:#f7fafc; }
+.pageBtn.active { background:#3498db; color:#fff; border-color:#3498db }
+
+@media (max-width:720px){
+  .controlsRow{flex-direction:column; align-items:stretch}
+}

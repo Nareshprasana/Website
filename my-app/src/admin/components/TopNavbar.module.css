@@ -1,0 +1,94 @@
+.topNavbar {
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(90deg, #0a0e27 0%, #111927 100%);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 28px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1500;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.navToggle {
+  font-size: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #e0e7ff;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.navToggle:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.navToggle:focus-visible {
+  outline: 2px solid #4a90e2;
+  outline-offset: -2px;
+}
+
+.navTitle {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  color: #f8fafc;
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navUser {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: background 0.2s ease;
+}
+
+.navUser:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.profilePic {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(74, 144, 226, 0.3);
+  transition: border-color 0.2s ease;
+}
+
+.navUser:hover .profilePic {
+  border-color: rgba(74, 144, 226, 0.6);
+}
+
+.userName {
+  font-size: 14px;
+  font-weight: 500;
+  color: #e0e7ff;
+}

@@ -1,0 +1,205 @@
+/* Navbar.module.css – Circular Download Button on Mobile + Tablet, Pill on Laptop+ */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9998;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.3rem 1.5rem;
+  transition: all 0.4s ease;
+}
+
+.navbar.scrolled {
+  padding: 0.2rem 1.5rem;
+  background: rgba(0, 0, 0, 0.98);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoWrapper { 
+  display: flex; 
+  align-items: center; 
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.logoWrapper:hover {
+  opacity: 0.8;
+}
+
+.logo {
+  height: 135px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+/* Review Button – unchanged (kept perfect) */
+@property --x { syntax: "<percentage>"; initial-value: 0%; inherits: false; }
+@property --y { syntax: "<percentage>"; initial-value: 0%; inherits: false; }
+
+.reviewBtn {
+  position: relative;
+  padding: 12px 28px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: white;
+  background: radial-gradient(circle at var(--x) var(--y), #FF70A6 10%, #9B76B8 30%, #130303 60%);
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+  box-shadow: 0 10px 25px rgba(147,51,234,0.4);
+  animation: moveGradient 10s ease infinite;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.reviewBtn::before {
+  content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+  transition: left 0.7s;
+}
+.reviewBtn:hover::before { left: 100%; }
+.reviewBtn:hover { transform: translateY(-4px) scale(1.05); box-shadow: 0 20px 40px rgba(147,51,234,0.6); }
+.reviewBtn:active { transform: scale(0.96); }
+
+@keyframes moveGradient {
+  0%   { --x: -50%; --y: -50%; }
+  25%  { --x: 150%; --y: -50%; }
+  50%  { --x: 150%; --y: 150%; }
+  75%  { --x: -50%; --y: 150%; }
+  100% { --x: -50%; --y: -50%; }
+}
+
+/* ====================================
+   DOWNLOAD BUTTON – CIRCULAR ON MOBILE + TABLET
+   ==================================== */
+.downloadBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #3b82f6, #9333ea, #ec4899);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  /* Default = Circular (Mobile + Tablet) */
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.downloadBtn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(59,130,246,0.5);
+}
+
+.downloadBtn:active {
+  transform: scale(0.92);
+}
+
+/* Hide text completely on ≤1024px */
+.downloadBtn .desktopText {
+  display: none;
+}
+
+.buttonsWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+}
+
+
+/* Smooth Zoom Animation */
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.55);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+/* Laptop & Larger (≥1025px) → Pill shape + text */
+
+
+/* ——————————————————————— RESPONSIVE ——————————————————————— */
+
+@media (max-width: 375.98px) {
+  .navbar { padding: 0.2rem 0.6rem; }
+  .logo { height: 65px; }
+  .downloadBtn { width: 35px; height: 35px; }
+  .reviewBtn { padding: 8px 15px; font-size: 0.85rem; }
+  .buttonsWrapper { gap: 0.3rem; }
+}
+
+@media (min-width: 376px) and (max-width: 768px) {
+  .navbar { padding: 0.25rem 1.4rem; }
+  .logo { height: 75px; }
+  .downloadBtn { width: 35px; height: 35px; }
+  .reviewBtn { padding: 8px 15px; font-size: 0.85rem; }
+  .buttonsWrapper { gap: 0.3rem; }
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {
+  .navbar { padding: 0.3rem 2rem; }
+  .logo { height: 90px; }
+  .downloadBtn { width: 56px; height: 56px; }
+  .reviewBtn { padding: 13px 34px; font-size: 1rem; }
+  .buttonsWrapper { gap: 1.4rem; }
+}
+
+/* Laptop & up – already handled above with min-width:1025px */
+@media (min-width: 1024px) {
+  .navbar { padding: 0.3rem 2.8rem; }
+  .logo { height: 110px; }
+  .downloadBtn { padding: 0.9rem 2rem; }
+  .reviewBtn { padding: 15px 40px; font-size: 1.08rem; }
+    .downloadBtn {
+    width: auto;
+    height: auto;
+    padding: 0.85rem 1.9rem;
+    border-radius: 9999px;
+    gap: 0.8rem;
+  }
+  .downloadBtn .desktopText {
+    display: inline;
+    font-size: 1.02rem;
+  }
+}
+
+/* 
+
+@media (min-width: 1441px) {
+  .navbar { padding: 1.4rem 3.5rem; }
+  .logo { font-size: 2.4rem; }
+  .downloadBtn { padding: 1rem 2.3rem; font-size: 1.1rem; }
+  .reviewBtn { padding: 16px 44px; font-size: 1.15rem; }
+  .buttonsWrapper { gap: 2rem; }
+} */

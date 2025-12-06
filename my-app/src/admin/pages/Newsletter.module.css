@@ -1,0 +1,79 @@
+.pageContainer {
+  padding: 20px;
+}
+
+.filtersRow {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.exportBtn {
+  padding: 8px 15px;
+  background: #3498db;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+}
+
+.exportBtn:hover {
+  background: #2980b9;
+}
+
+/* TABLE */
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.newsTable {
+  width: 100%;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  border-collapse: collapse;
+}
+
+.newsTable th {
+  background: black;
+  color: white;
+  padding: 12px;
+}
+
+.newsTable td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.rowHover:hover {
+  background: #f4f4f4;
+  transition: 0.3s;
+}
+
+/* PAGINATION */
+.pagination {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.pagination button {
+  padding: 8px 15px;
+  background: #000;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  border: none;
+}
+
+.pagination button:disabled {
+  background: #555;
+  cursor: not-allowed;
+}

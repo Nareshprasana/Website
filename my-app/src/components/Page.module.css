@@ -1,0 +1,27 @@
+.appContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  background-color: #000;
+}
+
+/* Mobile-L (425px and below) */
+@media (max-width: 426px) {
+  .appContainer {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile-M (375px and below) */
+@media (max-width: 375px) {
+  .appContainer {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile-S (320px and below) */
+@media (max-width: 320px) {
+  .appContainer {
+    grid-template-columns: 1fr;
+  }
+}

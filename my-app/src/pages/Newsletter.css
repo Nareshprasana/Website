@@ -1,0 +1,246 @@
+/* Newsletter Page */
+.newsletter-page {
+  min-height: 100vh;
+  background: #E7F0FF;
+  color: white;
+  position: relative;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/* Header Styling for Newsletter Page */
+.newsletter-page .header {
+  background: transparent;
+}
+
+/* Hero Section */
+.newsletter-hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  padding-top: 80px;
+  z-index: 2;
+  background: linear-gradient(135deg, #4a9eff 0%, #2d7dd2 100%);
+  transition: opacity 0.1s ease-out;
+}
+
+.newsletter-hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent 0%, transparent 40%, #E7F0FF 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.newsletter-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  z-index: 1;
+  transition: background 0.3s ease;
+}
+
+.newsletter-hero-content {
+  text-align: center;
+  max-width: 800px;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.newsletter-hero-content h1 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 64px;
+  font-weight: 1000;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.newsletter-hero-content p {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.8);
+  line-height: 1.6;
+}
+
+/* Newsletter Content */
+.newsletter-content {
+  padding: 80px 0 100px 0;
+  background: transparent;
+  position: relative;
+  z-index: 10;
+}
+
+.newsletter-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.newsletter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 40px;
+}
+
+/* Newsletter Cards */
+.newsletter-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.04) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.newsletter-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(74, 158, 255, 0.3);
+  box-shadow: 0 16px 48px rgba(74, 158, 255, 0.15);
+}
+
+.newsletter-category {
+  display: inline-block;
+  background: rgba(74, 158, 255, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.newsletter-card-content {
+  padding: 30px;
+}
+
+.newsletter-date {
+  color: rgba(74, 158, 255, 0.9);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.newsletter-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.newsletter-description {
+  font-size: 0.95rem;
+  color: rgba(0, 0, 0, 0.7);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.newsletter-read-btn {
+  background: transparent;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  color: #1a1a1a;
+  padding: 10px 24px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Manrope', sans-serif;
+}
+
+.newsletter-read-btn:hover {
+  background: rgba(74, 158, 255, 0.15);
+  border-color: rgba(74, 158, 255, 0.6);
+  color: #000;
+  transform: translateX(4px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .newsletter-grid {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+  }
+
+  .newsletter-hero-content h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .newsletter-hero {
+    padding: 100px 20px 60px 20px;
+    height: 70vh;
+  }
+
+  .newsletter-hero-content h1 {
+    font-size: 48px;
+  }
+
+  .newsletter-hero-content p {
+    font-size: 18px;
+  }
+
+  .newsletter-content {
+    padding: 60px 0 80px 0;
+  }
+
+  .newsletter-container {
+    padding: 0 20px;
+  }
+
+  .newsletter-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+
+
+  .newsletter-card-content {
+    padding: 25px;
+  }
+
+  .newsletter-title {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .newsletter-hero {
+    height: 60vh;
+  }
+
+  .newsletter-hero-content h1 {
+    font-size: 36px;
+  }
+
+  .newsletter-hero-content p {
+    font-size: 16px;
+  }
+
+  .newsletter-card-content {
+    padding: 20px;
+  }
+}

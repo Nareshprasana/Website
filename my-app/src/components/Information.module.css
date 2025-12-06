@@ -1,0 +1,207 @@
+/* Information Component Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif; */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+.information-section {
+  background-color: #000;
+  color: #fff;
+  padding: 60px 40px 60px 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-badge {
+  width: 64px;
+  height: 64px;
+  position: relative;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 0.8s ease-out 0.7s forwards;
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.verified-badge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #0084ff;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  border: 3px solid #000;
+}
+
+.title {
+  font-size: 27px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 0.8s ease-out 0.7s forwards;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #999;
+  margin-bottom: 32px;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 0.8s ease-out 0.7s forwards;
+}
+
+.description {
+  margin-bottom: 32px;
+  max-width: 550px;
+  font-size: 16px;
+  color: #999;
+  line-height: 1.5;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 0.8s ease-out 0.7s forwards;
+  
+}
+
+
+.video-card {
+  /* background-color: #14406B; */
+  background-color: #133D66;
+  border-radius: 16px;
+  overflow: hidden;
+  max-width: 480px;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 0.8s ease-out 0.7s forwards;
+}
+
+.video-header {
+  padding: 24px;
+}
+
+.expert-name {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.expert-title {
+  font-size: 14px;
+  color: #999;
+}
+
+.video-thumbnail {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+.thumbnail-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.play-button:hover {
+  background-color: rgba(0, 0, 0, 0.85);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Responsive Design for Information Section */
+@media (max-width: 1024px) {
+  .app-container {
+    grid-template-columns: 1fr;
+  }
+
+  .information-section {
+    padding: 40px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .information-section {
+    padding: 24px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .video-card {
+    max-width: 100%;
+  }
+
+  .profile-badge {
+    width: 56px;
+    height: 56px;
+  }
+
+  .verified-badge {
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+  }
+}

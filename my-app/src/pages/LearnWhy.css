@@ -1,0 +1,272 @@
+/* Import Playfair Display font */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap");
+
+/* Learn Why Page */
+.learn-why-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #000;
+  color: #fff;
+}
+
+/* Header Styling for Learn Why Page */
+.learn-why-page .header {
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Content Section */
+.learn-why-content {
+  min-height: 250vh;
+  background: #000;
+  padding-top: 100px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  position: relative;
+}
+
+.cards-container {
+  position: relative;
+  width: 100%;
+}
+
+/* Scrolling Cards with Apple Glass Effect */
+.scroll-card {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5%;
+  position: relative;
+  z-index: 10;
+  padding-top: 50px;
+}
+
+.card-inner {
+  width: 100%;
+  max-width: 1100px;
+  height: 350px;
+  padding: 40px 50px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  align-items: center;
+  
+  /* Apple Glass Effect */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0.06) 100%
+  );
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Grey Gradient Overlay */
+.card-inner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(128, 128, 128, 0.15) 0%,
+    rgba(96, 96, 96, 0.1) 50%,
+    rgba(64, 64, 64, 0.08) 100%
+  );
+  border-radius: 24px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Noise Texture */
+.card-inner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.15;
+  mix-blend-mode: overlay;
+  border-radius: 24px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Card Content Left */
+.card-content-left {
+  position: relative;
+  z-index: 3;
+  padding-right: 20px;
+}
+
+.card-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: left;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  line-height: 1.3;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.card-description {
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Content Right - Media Placeholder */
+.card-content-right {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding: 0 130px; */
+}
+
+.card-media-placeholder {
+  width: 100%;
+  height: 250px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.card-media-placeholder img,
+.card-media-placeholder video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 16px;
+}
+
+.card-video {
+  display: block;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .card-inner {
+    height: auto;
+    min-height: 350px;
+    padding: 40px;
+    gap: 30px;
+  }
+
+  .card-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .card-description {
+    font-size: 1rem;
+  }
+
+  .card-content-right {
+    /* padding: 0 110px; */
+  }
+
+  .card-media-placeholder {
+    width: 100%;
+    height: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .learn-why-content {
+    padding-top: 80px;
+  }
+
+  .scroll-card {
+    padding: 0 20px;
+    height: auto;
+    min-height: 70vh;
+  }
+
+  .card-inner {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: 500px;
+    padding: 35px;
+    gap: 25px;
+  }
+
+  .card-content-left {
+    padding-right: 0;
+  }
+
+  .card-title {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .card-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .card-content-right {
+    padding: 0 90px;
+  }
+
+  .card-media-placeholder {
+    width: 100%;
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-card {
+    padding: 0 15px;
+  }
+
+  .card-inner {
+    min-height: 450px;
+    padding: 25px;
+    gap: 20px;
+  }
+
+  .card-title {
+    font-size: 1.4rem;
+  }
+
+  .card-description {
+    font-size: 0.9rem;
+  }
+
+  .card-content-right {
+    padding: 0 70px;
+  }
+
+  .card-media-placeholder {
+    width: 100%;
+    height: 180px;
+  }
+}
